@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch.2 — BLP Extended Model — François-Marie Tardo Dino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FM <span>Tardo Dino</span></a>
+    <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1 — VECM</a>
+      <a href="blp.html" class="active">Ch.2 — BLP</a>
+      <a href="application.html">Ch.3 — Application</a>
+    </div>
+  </div>
+</nav>
+
+<section class="model-hero">
+  <div class="model-hero-inner">
+    <div class="chapter-tag">Chapter 2</div>
+    <h1>Spectacle Index &amp; Extended BLP Demand Model</h1>
+    <p>Operationalising Debord's "spectacle" into a quantifiable index and integrating it into a structural random-coefficients logit model</p>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <a href="research.html" class="back-link">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 7H3M7 3L3 7l4 4"/></svg>
+    Back to research overview
+  </a>
+
+  <div class="notice-banner">
+    <div class="notice-icon">🚧</div>
+    <p>
+      <strong>Data not yet collected.</strong> This interface is a preview. The spectacle index requires advertising content 
+      coding and hedonic regression residuals that have not been computed yet. 
+      Construction is planned for Year 2 of the doctoral programme (2027–2028).
+    </p>
+  </div>
+
+  <h2>Objective</h2>
+  <p>
+    This chapter transforms the philosophical concept of the "spectacle" (Debord, 1967) — the dominance of image-value over 
+    use-value in commodity relations — into a reproducible, quantitative index that can be integrated into a structural 
+    demand estimation framework.
+  </p>
+
+  <h2>The Spectacle Index (IFM)</h2>
+  <p>
+    The commodity fetishism index IFM<sub>jt</sub> for product <em>j</em> in market <em>t</em> is constructed from two components:
+  </p>
+  <div class="method-list">
+    <div class="method-item">
+      <div class="method-bullet">A</div>
+      <p><strong>Advertising component</strong> — Ratio of exposure time to narrative elements (celebrities, lifestyle, brand identity) versus objective product information (specifications, performance, price) in advertisements for product <em>j</em>.</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">B</div>
+      <p><strong>Price–utility component</strong> — Residual from a hedonic price regression of price on objective characteristics. The ratio of unexplained price to total price captures the "image premium" paid beyond measurable attributes.</p>
+    </div>
+  </div>
+
+  <h2>The Extended BLP Model</h2>
+  <p>
+    The index enters the consumer's indirect utility function in the Berry, Levinsohn &amp; Pakes (1995) framework. 
+    Consumer <em>i</em>'s utility from product <em>j</em> in market <em>t</em> is:
+  </p>
+
+  <div class="equation-block">
+    U<sub>ijt</sub> = x<sub>jt</sub> β<sub>i</sub> − α<sub>i</sub> p<sub>jt</sub> + γ · IFM<sub>jt</sub> + ξ<sub>jt</sub> + ε<sub>ijt</sub>
+    <br><br>
+    where:
+    <br>  x<sub>jt</sub>  = observable product characteristics
+    <br>  p<sub>jt</sub>  = price
+    <br>  IFM<sub>jt</sub> = spectacle index
+    <br>  ξ<sub>jt</sub>  = unobserved product quality
+    <br>  ε<sub>ijt</sub> = i.i.d. error term
+    <br><br>
+    Key parameter: <strong>γ</strong> = marginal effect of the spectacle on utility
+  </div>
+
+  <h2>Identification strategy</h2>
+  <p>
+    A potential endogeneity concern arises from correlation between IFM and ξ (unobserved quality may partly capture brand narratives). 
+    Two strategies are envisaged: instrumental variables and coefficient stability analysis over rolling 3–4 year windows.
+  </p>
+
+  <!-- ── MODEL INTERFACE (DISABLED) ── -->
+  <div class="model-interface mt-2">
+    <h3>BLP Estimation Interface</h3>
+    <p class="interface-desc">Configure the extended BLP model with spectacle index. Currently inactive — awaiting data collection and index construction.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Product market</label>
+        <select disabled>
+          <option>Automobiles — China</option>
+          <option>Automobiles — France</option>
+          <option>Coffee shops — China</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Estimation period</label>
+        <select disabled>
+          <option>2018–2024</option>
+          <option>2015–2024</option>
+          <option>Custom range</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>IFM components</label>
+        <select disabled>
+          <option>Both (advertising + hedonic residual)</option>
+          <option>Advertising only</option>
+          <option>Hedonic residual only</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Random coefficients on</label>
+        <select disabled>
+          <option>Price, horsepower, fuel efficiency</option>
+          <option>Price only</option>
+          <option>All attributes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Instrument set</label>
+        <select disabled>
+          <option>BLP instruments (rival characteristics)</option>
+          <option>Hausman instruments (other-market prices)</option>
+          <option>Cost shifters</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Optimisation method</label>
+        <select disabled>
+          <option>Nested fixed-point (NFP)</option>
+          <option>MPEC (constrained optimisation)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-disabled" disabled>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+      Run BLP estimation — awaiting data
+    </button>
+  </div>
+
+  <h2 class="mt-2">Expected output</h2>
+  <p>
+    Estimated demand parameters including the spectacle coefficient γ, with standard errors and confidence intervals. 
+    Own-price elasticities and counterfactual simulations showing how demand shifts when the spectacle component is 
+    removed from the price premium.
+  </p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1</a>
+      <a href="blp.html">Ch.2</a>
+      <a href="application.html">Ch.3</a>
+    </div>
+    <p>François-Marie Tardo Dino · Aix-Marseille School of Economics · 2026</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

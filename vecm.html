@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch.1 — VECM Stability Tests — François-Marie Tardo Dino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FM <span>Tardo Dino</span></a>
+    <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html" class="active">Ch.1 — VECM</a>
+      <a href="blp.html">Ch.2 — BLP</a>
+      <a href="application.html">Ch.3 — Application</a>
+    </div>
+  </div>
+</nav>
+
+<section class="model-hero">
+  <div class="model-hero-inner">
+    <div class="chapter-tag">Chapter 1</div>
+    <h1>Temporal Stability of Macroeconomic Savings Models</h1>
+    <p>VECM estimation, structural break tests, and rolling regressions on Chinese household savings data</p>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <a href="research.html" class="back-link">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 7H3M7 3L3 7l4 4"/></svg>
+    Back to research overview
+  </a>
+
+  <div class="notice-banner">
+    <div class="notice-icon">🚧</div>
+    <p>
+      <strong>Data not yet collected.</strong> This interface is a preview of the tools that will be available once the 
+      macroeconomic time series have been assembled and cleaned. The forms below are non-functional placeholders. 
+      Data collection is planned for Year 1 of the doctoral programme (2026–2027).
+    </p>
+  </div>
+
+  <h2>Objective</h2>
+  <p>
+    This chapter evaluates whether the dominant models of Chinese household savings — life-cycle (Modigliani &amp; Cao, 2004), 
+    permanent income (Friedman, 1957), precautionary motives (Choi et al., 2014), and competitive saving via sex ratios 
+    (Wei &amp; Zhang, 2011) — produce stable parameter estimates when extended to the most recent available data (2023–2024).
+  </p>
+
+  <h2>Methodology</h2>
+  <div class="method-list">
+    <div class="method-item">
+      <div class="method-bullet">1</div>
+      <p><strong>Structural break tests</strong> — Chow tests at candidate break dates (1998: housing reform; 2008: financial crisis; 2015: slowdown) and Bai-Perron tests for endogenous, multiple break detection.</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">2</div>
+      <p><strong>Recursive tests</strong> — CUSUM and CUSUM-of-squares statistics to detect progressive coefficient instability over time (Page, 1954).</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">3</div>
+      <p><strong>Rolling regressions</strong> — Estimation over 10–15 year moving windows to visualise the trajectory of key coefficients and their standard errors.</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">4</div>
+      <p><strong>VECM framework</strong> — Vector Error Correction Models for non-stationary series, with Johansen cointegration tests (Engle &amp; Granger, 1987; Johansen, 1991).</p>
+    </div>
+  </div>
+
+  <!-- ── MODEL INTERFACE (DISABLED) ── -->
+  <div class="model-interface mt-2">
+    <h3>VECM Estimation Interface</h3>
+    <p class="interface-desc">Configure and run stability tests on macroeconomic savings models. Currently inactive — awaiting data.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Base model</label>
+        <select disabled>
+          <option>Life-Cycle Hypothesis (LCH)</option>
+          <option>Permanent Income (PIH)</option>
+          <option>Precautionary Saving</option>
+          <option>Sex-Ratio Competition</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Estimation period</label>
+        <select disabled>
+          <option>1978–2024 (full sample)</option>
+          <option>1978–2008</option>
+          <option>1990–2024</option>
+          <option>Custom range</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Rolling window (years)</label>
+        <input type="number" value="12" disabled>
+      </div>
+      <div class="form-group">
+        <label>Break date (Chow test)</label>
+        <select disabled>
+          <option>1998 — Housing reform</option>
+          <option>2008 — Financial crisis</option>
+          <option>2015 — Growth slowdown</option>
+          <option>Endogenous (Bai-Perron)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Cointegration test</label>
+        <select disabled>
+          <option>Johansen trace</option>
+          <option>Johansen max-eigenvalue</option>
+          <option>Gregory-Hansen (with regime shift)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lag order</label>
+        <input type="number" value="2" disabled>
+      </div>
+    </div>
+
+    <button class="btn-disabled" disabled>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+      Run estimation — awaiting data
+    </button>
+  </div>
+
+  <h2 class="mt-2">Expected output</h2>
+  <p>
+    A synthetic table comparing stability results across models — indicating which coefficients are stable, which exhibit 
+    structural breaks, and the magnitude of parameter drift. This diagnostic will formally justify the search for an omitted 
+    cultural variable developed in Chapters 2 and 3.
+  </p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1</a>
+      <a href="blp.html">Ch.2</a>
+      <a href="application.html">Ch.3</a>
+    </div>
+    <p>François-Marie Tardo Dino · Aix-Marseille School of Economics · 2026</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

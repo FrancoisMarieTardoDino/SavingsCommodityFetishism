@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Project — François-Marie Tardo Dino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FM <span>Tardo Dino</span></a>
+    <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="vecm.html">Ch.1 — VECM</a>
+      <a href="blp.html">Ch.2 — BLP</a>
+      <a href="application.html">Ch.3 — Application</a>
+    </div>
+  </div>
+</nav>
+
+<section class="model-hero">
+  <div class="model-hero-inner">
+    <div class="chapter-tag">Doctoral Research Project</div>
+    <h1>Cultural factors and the high savings rate of Chinese households</h1>
+    <p>From the instability of macroeconomic models to a measurement of the "spectacle" in demand</p>
+  </div>
+</section>
+
+<section class="section research-body fade-in">
+  <div class="section-label">Research overview</div>
+  <div class="section-divider"></div>
+
+  <div class="keyword-tags">
+    <span class="keyword-tag">Chinese savings</span>
+    <span class="keyword-tag">Commodity fetishism</span>
+    <span class="keyword-tag">Guy Debord</span>
+    <span class="keyword-tag">BLP demand model</span>
+    <span class="keyword-tag">VECM stability</span>
+    <span class="keyword-tag">Automobile market</span>
+    <span class="keyword-tag">Spectacle index</span>
+  </div>
+
+  <h2>The puzzle</h2>
+
+  <p>
+    Chinese household savings rates rank among the highest in the world and have resisted convincing explanation by standard macroeconomic models for decades. The life-cycle hypothesis (Modigliani &amp; Cao, 2004), the permanent income hypothesis (Friedman, 1957), precautionary saving motives (Choi, Lugauer &amp; Mark, 2014), sex-ratio imbalances (Wei &amp; Zhang, 2011), and housing market dynamics have all been mobilised — yet none accounts for the full picture, and their explanatory power appears to shift over time.
+  </p>
+  <p>
+    The persistence of this puzzle is itself a signal. If models estimated on one period fail to predict the next, perhaps the issue is not missing variables within the standard framework, but a structural determinant that lies outside it. This thesis proposes and tests exactly such a determinant: a <strong>cultural factor</strong>, rooted in the Marxist concept of commodity fetishism and its radicalisation by Guy Debord under the concept of the <strong>"spectacle."</strong>
+  </p>
+
+  <h2>The hypothesis</h2>
+
+  <p>
+    Debord (1967) defines the spectacle as the subordination of the use-value of goods to their image-value — the moment when the narrative surrounding a commodity (brand prestige, lifestyle association, celebrity endorsement) becomes more important than its objective characteristics. In a society deeply penetrated by the spectacle, consumers pay a premium for image, which in turn stimulates consumption and reduces savings. The central hypothesis of this thesis is that <strong>China is comparatively less exposed to the spectacle than Western economies</strong>, and that this cultural difference constitutes a measurable, structural factor explaining part of the savings gap.
+  </p>
+  <p>
+    Several observations support this conjecture. The <em>guochao</em> (国潮) movement reflects a broad rejection of the prestige of foreign brands. Chinese consumers show growing preference for domestic products on the basis of objective quality and price, rather than brand narrative. If Chinese demand is less driven by "image-value" than demand in France or the United States, then part of the consumption shortfall — and the corresponding savings excess — can be attributed to a lower spectacle premium.
+  </p>
+
+  <h2>The approach: three chapters</h2>
+
+  <p>
+    <strong>Chapter 1</strong> establishes the diagnostic. It takes the principal macroeconomic models of Chinese savings — the life-cycle model, permanent income, precautionary motives, the sex-ratio competition model — and extends their estimation window to the most recent available data (2023–2024). Using structural break tests (Chow, Bai-Perron), recursive tests (CUSUM), and rolling regressions within a VECM framework, it assesses whether the estimated coefficients remain stable over time. The expected finding is significant instability, which formally justifies the search for an omitted structural variable.
+  </p>
+  <p>
+    <strong>Chapter 2</strong> constructs the analytical tool. It operationalises Debord's concept by building a quantitative <strong>spectacle index</strong> (IFM) composed of two dimensions: an <em>advertising component</em>, measuring the ratio of narrative content (celebrities, lifestyle scenarios, brand identity) to objective product information (specifications, performance, price) in advertisements; and a <em>price-utility component</em>, capturing the residual of a hedonic price regression — the share of the price not explained by objective characteristics. This index is integrated into a structural demand model following Berry, Levinsohn &amp; Pakes (1995), where the consumer's indirect utility depends on observable product attributes, price, unobserved quality, and the spectacle index. The key parameter to estimate is γ, the marginal effect of the spectacle on utility.
+  </p>
+  <p>
+    <strong>Chapter 3</strong> applies this extended BLP model to the <strong>Chinese automobile market</strong>, chosen for data availability, the importance of brand narratives in the sector, and the existence of a well-established BLP literature on automobiles since the original 1995 paper. The model is estimated on Chinese data and on a reference market (France or Germany). The core empirical test is whether γ<sub>China</sub> is statistically significantly lower than γ<sub>reference</sub>. A lower spectacle coefficient in China would indicate that Chinese consumers are less sensitive to the image premium, implying lower spectacle-driven consumption and, by extension, higher savings.
+  </p>
+
+  <h2>Expected contribution</h2>
+
+  <p>
+    This thesis aims to bridge critical social theory and applied economics by transforming a philosophical concept — the spectacle — into a reproducible, estimable quantity. If the spectacle premium is indeed lower in China, the policy implication is that boosting Chinese consumption is not merely a matter of reducing income uncertainty or improving social safety nets; it also requires understanding the cultural and semiotic structures that shape how consumers relate to commodities. The research offers both a new diagnostic for an old puzzle and a transferable methodological framework for cultural economics.
+  </p>
+
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1</a>
+      <a href="blp.html">Ch.2</a>
+      <a href="application.html">Ch.3</a>
+    </div>
+    <p>François-Marie Tardo Dino · Aix-Marseille School of Economics · 2026</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

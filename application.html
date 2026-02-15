@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch.3 — Auto Market Application — François-Marie Tardo Dino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FM <span>Tardo Dino</span></a>
+    <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1 — VECM</a>
+      <a href="blp.html">Ch.2 — BLP</a>
+      <a href="application.html" class="active">Ch.3 — Application</a>
+    </div>
+  </div>
+</nav>
+
+<section class="model-hero">
+  <div class="model-hero-inner">
+    <div class="chapter-tag">Chapter 3</div>
+    <h1>Application to the Chinese Automobile Market</h1>
+    <p>Estimating the spectacle premium in China versus a European reference market using the extended BLP framework</p>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <a href="research.html" class="back-link">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 7H3M7 3L3 7l4 4"/></svg>
+    Back to research overview
+  </a>
+
+  <div class="notice-banner">
+    <div class="notice-icon">🚧</div>
+    <p>
+      <strong>Data not yet collected.</strong> This interface is a preview. Automobile sales data, vehicle characteristics, 
+      and advertising content have not been assembled yet. Data collection and estimation are planned for Year 3 of the 
+      doctoral programme (2028–2029).
+    </p>
+  </div>
+
+  <h2>Objective</h2>
+  <p>
+    Apply the extended BLP model developed in Chapter 2 to the Chinese automobile market and compare results with a reference 
+    market (France or Germany). The automobile sector is chosen for four reasons: data availability at the model level, 
+    detailed price and characteristics data, the centrality of brand narratives in automotive marketing, and the existence 
+    of a well-established BLP literature on automobiles since the original 1995 paper.
+  </p>
+
+  <h2>Data sources</h2>
+  <div class="method-list">
+    <div class="method-item">
+      <div class="method-bullet">CN</div>
+      <p><strong>China</strong> — Sales by model from best-selling-cars.com; brand-level data from CAAM (China Association of Automobile Manufacturers); technical specifications and prices from Autohome (汽车之家); advertising data from IAI Yearbook.</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">FR</div>
+      <p><strong>France (reference)</strong> — New car sales data by model; vehicle specifications from manufacturer catalogues; advertising content from publicly available campaigns.</p>
+    </div>
+    <div class="method-item">
+      <div class="method-bullet">AD</div>
+      <p><strong>Advertising coding</strong> — For each model, advertisements will be classified by the ratio of narrative content (lifestyle, celebrity, brand story) to objective content (specs, performance, price). NLP tools may assist the coding process.</p>
+    </div>
+  </div>
+
+  <h2>Core empirical test</h2>
+  <p>
+    The chapter estimates the spectacle coefficient γ on both markets and tests whether the cross-country difference is 
+    statistically significant:
+  </p>
+
+  <div class="equation-block">
+    H₀: γ<sub>China</sub> = γ<sub>France</sub>
+    <br>
+    H₁: γ<sub>China</sub> &lt; γ<sub>France</sub>
+    <br><br>
+    A lower γ in China implies that Chinese consumers are <em>less</em> sensitive 
+    to the spectacle premium, consistent with lower image-driven consumption 
+    and higher savings rates.
+  </div>
+
+  <!-- ── MODEL INTERFACE (DISABLED) ── -->
+  <div class="model-interface mt-2">
+    <h3>Cross-Country Comparison Interface</h3>
+    <p class="interface-desc">Run the extended BLP on automobile data for China and a reference market. Currently inactive — awaiting data assembly.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>China — data source</label>
+        <select disabled>
+          <option>Autohome + CAAM + best-selling-cars.com</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Reference market</label>
+        <select disabled>
+          <option>France</option>
+          <option>Germany</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Vehicle segments</label>
+        <select disabled>
+          <option>All segments</option>
+          <option>Sedans only</option>
+          <option>SUVs only</option>
+          <option>NEVs (new energy vehicles)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Estimation period</label>
+        <select disabled>
+          <option>2020–2024</option>
+          <option>2018–2024</option>
+          <option>Custom range</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ad coding method</label>
+        <select disabled>
+          <option>Manual coding</option>
+          <option>NLP-assisted (BERT/GPT)</option>
+          <option>Hybrid</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Counterfactual</label>
+        <select disabled>
+          <option>Remove spectacle premium from price</option>
+          <option>Set γ = 0 (no spectacle effect)</option>
+          <option>Equalise γ across markets</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-disabled" disabled>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+      Run cross-country estimation — awaiting data
+    </button>
+  </div>
+
+  <h2 class="mt-2">Expected results</h2>
+  <p>
+    Estimated γ for China and the reference market, with confidence intervals and a formal test of the cross-country 
+    difference. Counterfactual simulations showing how Chinese automobile demand and implied savings would change if 
+    spectacle sensitivity were at European levels. These results will quantify the "spectacle premium" gap and its 
+    contribution to the savings puzzle.
+  </p>
+
+  <h2>Timeline</h2>
+  <p>
+    This applied chapter is the final piece of the dissertation, planned for Year 3 (2028–2029). It depends on the 
+    successful construction of the spectacle index in Chapter 2 and the availability of sufficiently granular automobile 
+    data for both markets.
+  </p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="vecm.html">Ch.1</a>
+      <a href="blp.html">Ch.2</a>
+      <a href="application.html">Ch.3</a>
+    </div>
+    <p>François-Marie Tardo Dino · Aix-Marseille School of Economics · 2026</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
